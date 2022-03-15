@@ -48,17 +48,17 @@ bundle exec rails webpacker:install:vue（vue のインストール）
 
 エラー出た場合（Ruby のバージョン差異）
 
-rbenv install -l（rbenv でインストール可能な ruby のバージョン一覧を調べる、インストール可能欄にない場合は 3.0.2 以上のものをダウンロードしてください、もしくはバージョンを指定してインストール）
+rbenv install -l（rbenv でインストール可能な ruby のバージョン一覧を調べる、インストール可能欄にない場合は 3.1.0 以上のものをダウンロードしてください、もしくはバージョンを指定してインストール）
 
-rbenv install 3.0.2(ruby ３.０.２のバージョンを指定してインストール)
+rbenv install 3.1.0(ruby ３.1.0のバージョンを指定してインストール)
 
-rbenv global 3.0.2(ruby のバージョンを３.0.２に切り替える)
+rbenv global 3.1.0(ruby のバージョンを３.1.0に切り替える)
 
-rbenv local 3.0.2(カレントディレクトリのみ 3.0.2 に適応)
+rbenv local 3.1.0(カレントディレクトリのみ 3.1.0に適応)
 
 rbenv rehash（適切なバージョンのコマンドを利用可能にする）
 
-ruby -v(3.0.2)になってるかを確認
+ruby -v(3.1.0)になってるかを確認
 
 # Usage
 
