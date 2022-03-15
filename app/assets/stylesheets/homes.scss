@@ -1,0 +1,23 @@
+@mixin btn($btn-color){
+  border: 1px solid $btn-color;
+  border-radius: 30px;
+  background-color: $btn-color;
+  width: 150px;
+  margin: 30px auto;
+  padding: 10px 0;
+  color: #fff;
+}
+.App-name{
+  font-family: cursive;
+  font-size: 28px;
+}
+.App-name-heading{
+  font-size: 18px;
+  margin-bottom: 200px; 
+}
+.singup-btn{
+  @include btn(lime);
+}
+.login-btn{
+  @include btn(aqua);
+}
