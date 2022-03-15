@@ -1,0 +1,29 @@
+$color-pink: rgba(254, 214, 227, 0.66);
+$color-bubble: linear-gradient(to bottom, rgba(198, 168, 237, 0.237) 0%, rgba(58, 206, 200, 0.283) 99.99%, rgba(50, 204, 197, 0.1) 100%);
+@mixin color-bubble($size: 350px, $top: 0px, $left: 100px){
+  background: $color-bubble;
+  border-radius: 50%;
+  position: absolute;
+  width: $size;
+  height: $size;
+  top : $top;
+  left: $left;
+}
+.page-container{
+  text-align: center;
+}
+.page-pink-wrap{
+  background-color: $color-pink;
+  border: solid 1px #fff;
+  border-radius: 50px;
+  padding-bottom: 30px;
+  margin: 50px auto;
+  width: 60%;
+  min-width: 500px;
+}
+.small-color-bubble{
+  @include color-bubble;
+}
+.big-color-bubble{
+  @include color-bubble(480px, -200px, 1000px);
+} 
