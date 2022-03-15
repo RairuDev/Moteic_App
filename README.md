@@ -83,3 +83,6 @@ DEMO の実行方法など、"Moteic"の基本的な使い方を説明する
 # ER 図
 
 <img width="750" alt="スクリーンショット 2022-03-07 15 27 01" src="https://user-images.githubusercontent.com/85437356/156980841-1afeca4f-5fd4-4356-9e6e-baa6d4edd30c.png">
+
+# 画面遷移図
+https://www.figma.com/file/Q38wXr5raqnNwyYCACWZma/potohorio?node-id=813%3A2
