@@ -1,0 +1,27 @@
+$color-pink: rgba(254, 214, 227, 0.66);
+.header-container{
+  background-color: $color-pink;
+}
+.header-items-container{
+  display: flex;
+  list-style: none;
+  font-size: 28px;
+  padding: 10px;
+  a{
+    text-decoration: none;
+    color: #fff;
+    z-index: 99;
+    position: relative;
+  }
+}
+.header-logo{
+  font-family: cursive;
+  margin-left: 30px;
+}
+.header-items-container{
+  align-items: center;
+  margin: 0 20px 0 auto;
+}
+.header-items{
+  margin: 0 10px;
+}
