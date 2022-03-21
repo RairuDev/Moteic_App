@@ -19,10 +19,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 gem 'slim-rails'
-#　railsでslimを利用するためのgem
+# railsでslimを利用するためのgem
 
 gem 'html2slim'
-#　html.erbをhtmle.slimに変換するためのgem
+# html.erbをhtmle.slimに変換するためのgem
 gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
