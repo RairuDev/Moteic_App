@@ -1,0 +1,17 @@
+@mixin btn($btn-color){
+  border: 1px solid $btn-color;
+  border-radius: 30px;
+  background-color: $btn-color;
+  width: 150px;
+  margin: 30px auto;
+  padding: 10px 0;
+  color: #fff;
+}
+.submit-btn{
+  @include btn(aqua);
+  color: black;
+}
+.sign_in{
+  font-family: cursive;
+  font-size: 28px;
+}

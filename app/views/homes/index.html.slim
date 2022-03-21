@@ -2,8 +2,7 @@ div.page-container
   div.page-pink-wrap
     h2.App-name Moteic
     p.App-name-heading ITの人との出会いをもっと身近に
-    / div.login-btn.link_to 'ログイン', new_user_session_path,
     div.login-btn = link_to 'ログイン', new_user_session_path
-    div.singup-btn = link_to '会員登録', user_session_path
+    div.signup-btn = link_to '会員登録', new_user_registration_path
 div.small-color-bubble
 div.big-color-bubble
