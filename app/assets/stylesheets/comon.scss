@@ -8,6 +8,7 @@ $color-bubble: linear-gradient(to bottom, rgba(198, 168, 237, 0.237) 0%, rgba(58
   height: $size;
   top : $top;
   left: $left;
+  z-index: 0;
 }
 .page-container{
   text-align: center;
