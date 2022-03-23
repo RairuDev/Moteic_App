@@ -27,4 +27,4 @@ $color-bubble: linear-gradient(to bottom, rgba(198, 168, 237, 0.237) 0%, rgba(58
 }
 .big-color-bubble{
   @include color-bubble(480px, -200px, 1000px);
-} 
+}

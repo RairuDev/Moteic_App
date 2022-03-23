@@ -24,6 +24,30 @@ gem 'slim-rails'
 gem 'html2slim'
 # html.erbをhtmle.slimに変換するためのgem
 gem 'devise'
+
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rails-i18n'
+#deviseを日本語化、またviewをカスタマイズする際に、devise-i18nは適用されないので、通常のi18nを追加
+
+# Seeds
+gem 'seed-fu'
+
+# Pagination
+# gem 'bootstrap4-kaminari-views'
+gem 'kaminari'
+gem 'kaminari-i18n'
+
+# Breadcrumbs
+gem 'gretel'
+
+# image uploader
+gem 'mini_magick'
+gem "image_processing", "~> 1.0"
+
+# gem for search
+gem 'ransack'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -38,6 +62,22 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # rspecにてあらかじめ作っておきたいデータを格納
+  gem 'factory_bot_rails'
+  # ダミーデータをデータベースに作成する。
+  gem 'faker'
+  gem 'pry-rails'
+  gem 'rspec_junit_formatter'
+  # rspecを利用する際に必要
+  gem 'rspec-rails'
+  # エラーが見やすくなる
+  gem 'selenium-webdriver'
+  # コードを自動で修正するツール。
+  gem 'rubocop'
+  gem 'rubocop-checkstyle_formatter'
+  gem 'rubocop-rails'
+  # 開発環境で、メールのやりとりを可能とするgem
+  gem 'letter_opener_web'
 end
 
 group :development do

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    confirmations: 'users/confirmations',
+    passwords: 'users/passwords'
+  }
   root 'homes#index'
-  resources :users
-  devise_for(
-    :users,
-    path: 'users',
-    module: 'devise'
-  )
 end
