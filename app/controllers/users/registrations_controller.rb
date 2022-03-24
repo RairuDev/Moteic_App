@@ -9,6 +9,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def step1
+    @user = User.new(sign_up_params)
+  end
+
   # POST /resource
   # def create
   #   super

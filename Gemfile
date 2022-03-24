@@ -23,30 +23,37 @@ gem 'slim-rails'
 
 gem 'html2slim'
 # html.erbをhtmle.slimに変換するためのgem
+
 gem 'devise'
 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n'
-#deviseを日本語化、またviewをカスタマイズする際に、devise-i18nは適用されないので、通常のi18nを追加
+# deviseを日本語化、またviewをカスタマイズする際に、devise-i18nは適用されないので、通常のi18nを追加
 
-# Seeds
+# 初期データを登録
 gem 'seed-fu'
 
-# Pagination
-# gem 'bootstrap4-kaminari-views'
+# ページネーションを実装
 gem 'kaminari'
 gem 'kaminari-i18n'
+# お洒落なページネーションを実装可能
+# gem 'bootstrap4-kaminari-views'
 
-# Breadcrumbs
+# パンくずリストを実装
+# パンくずリストとはユーザーに今自分がサイトのどの位置にいるかをわかりやすくするためのリスト
 gem 'gretel'
 
 # image uploader
+# ImageMagickをrailsで扱えるようにしてくれるGem
 gem 'mini_magick'
+
+# MiniMagickで提供できない画像サイズを調整する機能
 gem "image_processing", "~> 1.0"
 
-# gem for search
+# 検索機能実装
 gem 'ransack'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -57,11 +64,11 @@ gem 'ransack'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', '>= 1.4.4', require: false # デフォルトで記載
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # デフォルトで記載
   # rspecにてあらかじめ作っておきたいデータを格納
   gem 'factory_bot_rails'
   # ダミーデータをデータベースに作成する。
@@ -80,7 +87,7 @@ group :development, :test do
   gem 'letter_opener_web'
 end
 
-group :development do
+group :development do # デフォルトで記載
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
@@ -91,13 +98,12 @@ group :development do
   gem 'spring'
 end
 
-group :test do
+group :test do # デフォルトで記載
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # デフォルトで記載

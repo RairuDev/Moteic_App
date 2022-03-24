@@ -1,15 +1,14 @@
-@mixin btn($btn-color){
+@mixin btn($btn-color, $color){
   border: 1px solid $btn-color;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: $btn-color;
   width: 150px;
   margin: 30px auto;
-  padding: 10px 0;
-  color: #fff;
+  padding: 10px 20px;
+  color: $color;
 }
 .submit-btn{
-  @include btn(aqua);
-  color: black;
+  @include btn(lime, black);
 }
 .sign_in{
   font-family: cursive;

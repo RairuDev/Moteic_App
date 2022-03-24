@@ -1,27 +1,26 @@
 div.page-container
   div.page-pink-wrap
+    //このコード分からなかったです
     h2.sign_in = (t 'users.registrations.new.sign_up')
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_with(url: users_sign_up_step2_path, local: true) do |f|
       = render "users/shared/error_messages", resource: resource
-      .field
-        = f.label :email
+      div.input_field
+        = f.label :email, 'メールアドレス'
         br
         = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field
-        = f.label :password
-        - if @minimum_password_length
-          em
-            | (
-            = @minimum_password_length
-            |  文字以上)
+      div.input_field
+        = f.label :password, 'パスワード'
+        br
+        em （半角大文字小文字数字を１文字以上含んでください）
         br
         = f.password_field :password, autocomplete: "new-password"
-      .field
-        = f.label :password_confirmation
+      div.input_field
+        = f.label :password_confirmation, 'パスワード（確認）'
         br
         = f.password_field :password_confirmation, autocomplete: "new-password"
       .actions
-        = f.submit (t 'users.registrations.new.sign_up'), class: 'submit-btn'
-    = render "users/shared/links"
-div.small-color-bubble
-div.big-color-bubble
+        //このコード分からなかったです
+        /= f.submit (t 'users.registrations.new.sign_up'), class: 'submit-btn'
+        = f.submit ('次へ'), class: 'submit-btn'
+    //このコード分からなかったです
+    /= render "users/shared/links"
