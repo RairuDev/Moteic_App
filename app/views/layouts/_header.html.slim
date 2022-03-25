@@ -1,9 +1,9 @@
 header.header-container
   nav
     ul.header-items-container
-      li.header-logo = link_to "Moteic", "#"
+      li.header-logo = link_to "Moteic", root_path
       div.header-items-container
         li.header-items = link_to "利用規約", "#"
         li.header-items = link_to "初めての方", "#"
-        li.header-items = link_to "ログイン", "#"
-        li.header-items = link_to "新規登録", "#"
+        li.header-items = link_to "ログイン", new_user_session_path
+        li.header-items = link_to "新規登録", new_user_registration_path
