@@ -4,23 +4,19 @@ div.page-container
     h2.sign_in = (t 'users.registrations.new.sign_up')
     = form_with(url: users_sign_up_step2_path, local: true) do |f|
       = render "users/shared/error_messages", resource: resource
-      div.input_field
-        = f.label :email, 'メールアドレス', class: 'form_label'
-        br
-        = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form_field', required:'required'
-      div.input_field
-        = f.label :password, 'パスワード', class: 'form_label'
-        br
-        em （半角大文字小文字数字を１文字以上含んでください）
-        br
-        = f.password_field :password, autocomplete: 'new-password', class: 'form_field', required:'required'
-      div.input_field
-        = f.label :password_confirmation, 'パスワード（確認）', class: 'form_label'
-        br
-        = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form_field', required:'required'
+      = f.label :email, 'メールアドレス', class: 'form_label'
+      = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form_field', required:'required'
+
+      = f.label :password, 'パスワード', class: 'form_label'
+      em （半角大文字小文字数字を１文字以上含んでください）
+      br
+      = f.password_field :password, autocomplete: 'new-password', class: 'form_field', required:'required'
+
+      = f.label :password_confirmation, 'パスワード（確認）', class: 'form_label'
+      = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form_field', required:'required'
       .actions
         //このコード分からなかったです
         /= f.submit (t 'users.registrations.new.sign_up'), class: 'submit-btn'
         = f.submit ('次へ'), class: 'submit-btn'
     //このコード分からなかったです
-    /= render "users/shared/links"
+    = render "users/shared/links"
