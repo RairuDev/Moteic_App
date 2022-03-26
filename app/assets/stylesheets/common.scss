@@ -19,6 +19,18 @@ $color-bubble: linear-gradient(to bottom, rgba(198, 168, 237, 0.237) 0%, rgba(58
   padding: 10px 20px;
   color: $color;
 }
+.signup-btn{
+  @include btn(lime, black);
+  a{
+    text-decoration: none;
+  }
+}
+.login-btn{
+  @include btn(aqua, black);
+  a{
+    text-decoration: none;
+  }
+}
 .submit-btn{
   @include btn(lime, black);
 }
