@@ -1,6 +1,8 @@
+/ controller_nameメソッドはコントローラーのクラス名を取得するもので、この場合sessionsコントローラーのクラス名sessionsを取得している。
 - if controller_name != 'sessions'
   = link_to t('users.sessions.new.sign_in'), new_session_path(resource_name)
   br
+  / マップはルビーのメソッドで、配列、ハッシュ、レンジで使用できます。mapの主な用途は、データ変換です。こう考えると、devise_mappingはデバイス上でデータ変換を行なっており、registrableは登録処理を通してユーザーをサインアップします。また、ユーザーに自身のアカウントを編集したり削除することを許可します。そこに？を加えユーザーはサインアップしているかどうか？（真偽値）となっています。この二つを合わせて書くことで、ハッシュで持ってるユーザーデータを確認し、ユーザーデータがなくてかつregistrations（登録画面開いていない）を取得していない時はfalseの為、link_to以下は表示されない。trueであれば表示される。
 - if devise_mapping.registerable? && controller_name != 'registrations'
   = link_to t('users.registrations.new.sign_up'), new_registration_path(resource_name)
   br

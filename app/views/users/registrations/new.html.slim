@@ -19,8 +19,6 @@ div.page-container
         br
         = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form_field', required:'required'
       .actions
-        //このコード分からなかったです
-        /= f.submit (t 'users.registrations.new.sign_up'), class: 'submit-btn'
         = f.submit ('次へ'), class: 'submit-btn'
     //このコード分からなかったです
-    /= render "users/shared/links"
+    = render "users/shared/links"
