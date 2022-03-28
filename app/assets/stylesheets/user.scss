@@ -1,16 +1,30 @@
-.form_label{
-  display: block;
-  margin: 30px 0 10px 0;
-}
-.form_field{
-  width: 350px;
+@mixin input-form($form-size: $form-size) {
+  width: $form-size;
   border: solid 1px;
   background-color: #fff;
   text-align: center;
   border-radius: 10px;
   padding: 5px;
+  margin: 10px;
 }
-.sign_in{
+.form_label{
+  display: block;
+  margin: 30px 0 0px 0;
+  font-size: 20px;
+}
+.long_form_field{
+  @include input-form(350px);
+}
+.short_form_field{
+  @include input-form(200px);
+}
+.radio_button{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 10px;
+}
+.page-theme{
   font-family: cursive;
   font-size: 28px;
   margin-top: 30px;

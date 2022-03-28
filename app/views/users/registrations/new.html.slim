@@ -1,7 +1,7 @@
 div.page-container
   div.page-pink-wrap
     //このコード分からなかったです
-    h2.sign_in = (t 'users.registrations.new.sign_up')
+    h2.page-theme = (t 'users.registrations.new.sign_up')
     = form_with(url: users_sign_up_step2_path, local: true) do |f|
       = render "users/shared/error_messages", resource: resource
       = f.label :email, 'メールアドレス', class: 'form_label'
