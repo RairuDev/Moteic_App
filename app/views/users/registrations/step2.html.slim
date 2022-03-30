@@ -13,10 +13,10 @@ h2.page-theme sign_up
   = f.label :gender, '女性', value: :woman
 
   = f.label :body_shape, '体型', class: 'form_label'
-  = f.select :body_shape, options_for_select([['体型を選択して下さい', ''], ['細め', '1'], ['やや細め', '2'], ['普通', '3'], ['やや太め', '4'], ['太め', '5'], ['細マッチョ', '6'], ['マッチョ', '7']]), {}, class: 'short_form_field'
+  = f.select :body_shape, options_for_select([['体型を選択して下さい'], ['細め'], ['やや細め'], ['普通'], ['ぽっちゃり'], ['筋肉質']]), {}, class: 'short_form_field'
 
   = f.label :age, '年齢', class: 'form_label'
-  = f.select :age, options_for_select([['年齢を選択して下さい', ''], ['18~24', '1'], ['25~29', '2'], ['30~34', '3'], ['35~39', '4'], ['40~', '5']]), {}, class: 'short_form_field'
+  = f.select :age, options_for_select([['年齢を選択して下さい'], ['18~24'], ['25~29'], ['30~34'], ['35~39'], ['40~']]), {}, class: 'short_form_field'
   .actions
     = f.submit "戻る", name: :back,class: 'back-btn'
     = f.submit ('次へ'), class: 'green-btn'
