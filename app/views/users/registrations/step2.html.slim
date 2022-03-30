@@ -1,13 +1,12 @@
 div.page-container
   div.page-pink-wrap
-    h2.page-theme sample
-    = form_with(url: users_sign_up_step3_path, local: true) do |f|
+    h2.page-theme sign_up
+    = form_with model: @user, url: users_sign_up_step3_path(@user), local: true do |f|
       /= render "users/shared/error_messages", resource: resource
       = f.label :name, '名前', class: 'form_label'
       em （6文字以下）
       br
       = f.text_field :name, autofocus: true, autocomplete: "additional-name", class: 'short_form_field', required: 'required', maxlength:6
-
       p.form_label 性別
       = f.radio_button :gender, :man, class: 'radio_button'
       = f.label :gender, '男性', value: :man
@@ -20,3 +19,6 @@ div.page-container
 
       = f.label :age, '年齢', class: 'form_label'
       = f.select :age, options_for_select([['年齢を選択して下さい', ''], ['18~24', '1'], ['25~29', '2'], ['30~34', '3'], ['35~39', '4'], ['40~', '5']]), {}, class: 'short_form_field'
+      .actions
+        = f.submit "戻る", name: :back,class: 'back-btn'
+        = f.submit ('次へ'), class: 'green-btn'
