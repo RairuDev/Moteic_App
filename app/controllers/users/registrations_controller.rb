@@ -9,15 +9,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  def step1
-    @user = User.new(sign_up_params)
-  end
-
   def step2
-
+    @user = User.new(sign_up_params)
+    # render :new if @user.invalid?
+    render :new and return if params[:back]
   end
 
   def step3
+    render :new and return if params[:back]
   end
 
   # POST /resource
@@ -52,9 +51,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :encrypetd_password, :email, :gender, :age, :body_shpae, :job, :income, :area])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
