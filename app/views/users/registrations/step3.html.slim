@@ -1,0 +1,16 @@
+h2.page-theme sign_up
+= form_with model: @user, url: users_sign_up_confirm_path(@user), locla: true do |f|
+  = f.label :name, '職業', class: 'form_label'
+  em （複数選択可）
+  br
+  = f.radio_button :job, :'IT-engineer', class: 'radio_button'
+  = f.label :job, 'ITエンジニア', value: :'IT-engineer'
+  
+  = f.radio_button :job, :'IT-relation', class: 'radio_button'
+  = f.label :job, 'IT関連', value: :'IT-relation'
+
+  = f.radio_button :job, :'Web-relation', class: 'radio_button'
+  = f.label :job, 'Web関連', value: :'Web-relation'
+
+  = f.radio_button :job, :'others', class: 'radio_button'
+  = f.label :job, 'その他', value: :'others'
