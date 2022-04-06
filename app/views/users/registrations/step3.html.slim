@@ -1,6 +1,18 @@
 h2.page-theme sign_up
 = form_with model: @user, url: users_sign_up_confirm_path(@user), locla: true do |f|
-  /- ["ITエンジニア", "IT関連", "Web関連", "その他"].each do |type|
-    = f.check_box :job, {multiple: true}, type, checked_value = "1", unchecked_value = "0"
-    = f.label :job, type
-  = 
+  p.form_label 仕事
+
+  = f.radio_button :job, :'IT-engineer', class: 'radio_button'
+  = f.label :job, 'ITエンジニア', value: :'It-engineer'
+
+  = f.radio_button :job, :'IT-relation', class: 'radio_button'
+  = f.label :job, 'IT関連', value: :'IT-relation'
+
+  = f.radio_button :job, :'Web-relation', class: 'radio_button'
+  = f.label :job, 'Web関連', value: :'Web-relation'
+
+  = f.radio_button :job, :'others', class: 'radio_button'
+  = f.label :job, 'その他', value: :'others'
+
+  = f.label :income, '収入', class: 'form_label'
+  = f.select :income, options_for_select([['収入を選択して下さい'], ['~300'], ['300~500'], ['500~700'], ['700~1000'], ['1000~2000'], ['2000~']]), {}, class: 'short_form_field'

@@ -18,14 +18,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def step3
     @user = User.new(sign_up_params)
     render :new and return if params[:back]
-
-    ["IT-engineer", "IT-relation", "Web-relation", "others"].each do |di1,di2|
-      # binding.pry
-      if di2 == "1"
-        @user_job = User.new(job: di1)
-        @user_job.save
-      end
-    end
   end
 
   # POST /resource
