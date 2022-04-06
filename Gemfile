@@ -24,6 +24,9 @@ gem 'slim-rails'
 gem 'html2slim'
 # html.erbをhtmle.slimに変換するためのgem
 
+gem 'active_hash'
+#擬似モデルを作るgem
+
 gem 'devise'
 
 gem 'devise-i18n'
