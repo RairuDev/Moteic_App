@@ -16,3 +16,9 @@ h2.page-theme sign_up
 
   = f.label :income, '収入', class: 'form_label'
   = f.select :income, options_for_select([['収入を選択して下さい'], ['~300'], ['300~500'], ['500~700'], ['700~1000'], ['1000~2000'], ['2000~']]), {}, class: 'short_form_field'
+
+  = f.label :prefecture_id, '地域', class: 'form_label'
+  = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}, class: 'short_form_field')
+  .actions
+    = f.submit "戻る", name: :back,class: 'back-btn'
+    = f.submit ('次へ'), class: 'green-btn'
