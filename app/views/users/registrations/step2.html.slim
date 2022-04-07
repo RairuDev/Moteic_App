@@ -1,5 +1,5 @@
 h2.page-theme sign_up
-= form_with model: @user, url: users_sign_up_step3_path(@user), local: true do |f|
+= form_with model: @user, url: users_sign_up_step3_path(@user), method: :get, local: true do |f|
   /= render "users/shared/error_messages", resource: resource
   = f.label :name, '名前', class: 'form_label'
   em （6文字以下）

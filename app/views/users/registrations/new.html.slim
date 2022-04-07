@@ -1,6 +1,5 @@
-//このコード分からなかったです
 h2.page-theme = (t 'users.registrations.new.sign_up')
-= form_with model: @user, url: users_sign_up_step2_path(@user), local: true do |f|
+= form_with model: @user, url: users_sign_up_step2_path(@user), method: :get, local: true do |f|
   /= render "users/shared/error_messages", resource: resource
   = f.label :email, 'メールアドレス', class: 'form_label'
   = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'long_form_field', required:'required'

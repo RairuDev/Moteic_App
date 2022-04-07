@@ -17,11 +17,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def step3
     @user = User.new(sign_up_params)
+    binding.pry
     render :new and return if params[:back]
   end
 
   def confirm
-
+    @user = User.new(sign_up_params)
+    binding.pry
   end
   # POST /resource
   # def create
@@ -56,7 +58,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :encrypetd_password, :email, :gender, :age, :body_shpae, :job, :income, :prefecture_id)}
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :encrypetd_password, :email, :gender, :age, :body_shpae, :job, :income, :prefecture_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
