@@ -10,4 +10,6 @@ class User < ApplicationRecord
   enum age: {'18~24': 0, '25~29': 1, '30~34': 2, '35~39': 3, '40~': 4}
   enum job: {'IT-engineer': 0, 'IT-relation': 1, 'Web-relation': 2, 'others': 3}
   enum income: {'~300': 0, '300~500':1, '500~700':2, '700~1000':3, '1000~2000':4, '2000~':5}
+
+  # validates :content, {presence: true, length : {maximum:6}}
 end
