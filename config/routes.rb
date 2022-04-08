@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'usrs/sign_up/new', to: 'users/registrations#new'
-    post 'users/sign_up/step2', to: 'users/registrations#step2'
-    post 'users/sign_up/step3', to: 'users/registrations#step3'
     get 'users/sign_up/step2', to: 'users/registrations#step2'
     get 'users/sign_up/step3', to: 'users/registrations#step3'
     get 'users/sign_up/confirm', to: 'users/registrations#confirm'

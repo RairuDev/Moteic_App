@@ -1,5 +1,5 @@
 h2.page-theme sign_up
-= form_with model: @user, url: users_sign_up_confirm_path(@user), locla: true do |f|
+= form_with model: @user, url: users_sign_up_confirm_path(@user), method: :get, locla: true do |f|
   p.form_label 仕事
 
   = f.radio_button :job, :'IT-engineer', class: 'radio_button'
