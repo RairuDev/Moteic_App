@@ -17,6 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def step3
     @user = User.new(sign_up_params)
+    binding.pry
     render :new and return if params[:back]
   end
 
