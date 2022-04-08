@@ -15,7 +15,7 @@ $color-bubble: linear-gradient(to bottom, rgba(198, 168, 237, 0.237) 0%, rgba(58
   border-radius: 20px;
   background-color: $btn-color;
   width: 150px;
-  margin: 30px auto;
+  // margin: 30px auto;
   padding: 10px 20px;
   color: $color;
   display: block;
@@ -26,9 +26,16 @@ $color-bubble: linear-gradient(to bottom, rgba(198, 168, 237, 0.237) 0%, rgba(58
 }
 .green-btn{
   @include btn(lime, black);
+  margin: 30px;
 }
 .back-btn{
   @include btn(red, black);
+  margin: 30px;
+}
+.actions{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
 }
 .page-container{
   text-align: center;//ページの大枠を囲む
