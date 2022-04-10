@@ -11,17 +11,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def step2
     @user = User.new(sign_up_params)
     # render :new if @user.invalid?
-    render :new and return if params[:back]
   end
 
   def step3
     @user = User.new(sign_up_params)
-    render :step2 and return if params[:back]
+    render :new and return if params[:back]
   end
 
   def confirm
     @user = User.new(sign_up_params)
-    render :step3 and return if params[:back]
+    render :step2 and return if params[:back]
   end
   # POST /resource
   # def create
