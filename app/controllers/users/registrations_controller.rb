@@ -10,7 +10,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def step2
     @user = User.new(sign_up_params)
-    # render :new if @user.invalid?
   end
 
   def step3
