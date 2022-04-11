@@ -15,12 +15,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def step3
     @user = User.new(sign_up_params)
     render :new and return if params[:back]
+    # binding.pry
   end
 
   def confirm
     @user = User.new(sign_up_params)
     render :step2 and return if params[:back]
   end
+
   # POST /resource
   # def create
   #   super
@@ -50,6 +52,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def validates_step1
+    # step2で入力された値をsessionに保存
+    binding.pry
+    session[:name] = user_params[:name]
+    # バリデーション用に、仮でインスタンスを作成する
+    @user = User.new(
+      nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      last_name: "山田", # 入力前の情報は、バリデーションに通る値を仮で入れる
+      first_name: "太郎", 
+      last_name_kana: "ヤマダ", 
+      first_name_kana: "タロウ", 
+    )
+    # 仮で作成したインスタンスのバリデーションチェックを行う
+    render '/signup/step1' unless @user.valid?
+  end
   # protected
 
   # def configure_account_update_params
