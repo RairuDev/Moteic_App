@@ -11,5 +11,11 @@ class User < ApplicationRecord
   enum job: {'IT-engineer': 0, 'IT-relation': 1, 'Web-relation': 2, 'others': 3}
   enum income: {'~300': 0, '300~500':1, '500~700':2, '700~1000':3, '1000~2000':4, '2000~':5}
 
-  # validates :content, {presence: true, length : {maximum:6}}
+  validates :name, {presence: true, length: {maximum:6}}
+  validates :gender, inclusion: { in: ['man', 'woman'] }
+  validates :body_shape, inclusion: {in: ['細め', 'やや細め', '普通', 'ぽっちゃり', '筋肉質']}
+  validates :age, inclusion: {in: ['18~24', '25~29', '30~34', '35~39', '40~']}
+  validates :job, inclusion: {in: ['It-engineer', 'IT-relation', 'Web-relation', 'others']}
+  validates :income, inclusion: {in: ['~300', '300~500', '500~700', '700~1000', '1000~2000', '2000~']}
+  validates :prefecture_id, numericality: { greater_than_or_equal_to:1 ,less_than_or_equal_to:47}
 end
