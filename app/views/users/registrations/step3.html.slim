@@ -1,17 +1,17 @@
 h2.page-theme sign_up
 = form_with model: @user, url: users_sign_up_confirm_path(@user), method: :get, local: true do |f|
-  p.form_label 仕事
+  p.form_label 職業
 
-  = f.radio_button :job, :'IT-engineer', class: 'radio_button'
+  = f.radio_button :job, :'IT-engineer', checked: 'IT-engineer' == session[:job], class: 'radio_button'
   = f.label :job, 'ITエンジニア', value: :'It-engineer'
 
-  = f.radio_button :job, :'IT-relation', class: 'radio_button'
+  = f.radio_button :job, :'IT-relation', checked: 'IT-relation' == session[:job], class: 'radio_button'
   = f.label :job, 'IT関連', value: :'IT-relation'
 
-  = f.radio_button :job, :'Web-relation', class: 'radio_button'
+  = f.radio_button :job, :'Web-relation', checked: 'Web-relation' == session[:job], class: 'radio_button'
   = f.label :job, 'Web関連', value: :'Web-relation'
 
-  = f.radio_button :job, :'others', class: 'radio_button'
+  = f.radio_button :job, :'others', checked: 'others' == session[:job], class: 'radio_button'
   = f.label :job, 'その他', value: :'others'
 
   = f.label :income, '収入', class: 'form_label'

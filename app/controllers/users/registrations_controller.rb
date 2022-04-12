@@ -21,7 +21,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:gender] = sign_up_params[:gender]
     session[:body_shape] = sign_up_params[:body_shape]
     session[:age] = sign_up_params[:age]
-    
     @user = User.new(sign_up_params)
     render :new and return if params[:back]
     # render :step2 if @user.invalid?
