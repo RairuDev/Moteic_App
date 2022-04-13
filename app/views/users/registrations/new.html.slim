@@ -2,7 +2,7 @@ h2.page-theme = (t 'users.registrations.new.sign_up')
 = form_with model: @user, url: users_sign_up_step2_path(@user), method: :get, local: true do |f|
   /= render "users/shared/error_messages", resource: resource
   = f.label :email, 'メールアドレス', class: 'form_label'
-  = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'long_form_field', required:'required'
+  = f.email_field :email, value: session[:email], autofocus: true, autocomplete: 'email', class: 'long_form_field', required:'required'
 
   = f.label :password, 'パスワード', class: 'form_label'
   em （半角大文字小文字数字を１文字以上含んでください）
@@ -12,7 +12,6 @@ h2.page-theme = (t 'users.registrations.new.sign_up')
   = f.label :password_confirmation, 'パスワード（確認）', class: 'form_label'
   = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'long_form_field', required:'required'
   .actions
-    //このコード分からなかったです
     /= f.submit (t 'users.registrations.new.sign_up'), class: 'submit-btn'
-  = f.submit ('次へ'), class: 'green-btn'
-= render "users/shared/links"
+    = f.submit ('次へ'), class: 'green-btn-center'
+  = render "users/shared/links"
