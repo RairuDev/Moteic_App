@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'users/sign_up/step2', to: 'users/registrations#step2'
     get 'users/sign_up/step3', to: 'users/registrations#step3'
     get 'users/sign_up/confirm', to: 'users/registrations#confirm'
-    post 'users/sign_up/create', to: 'users/registrations#create'
+    post 'users/sign_up', to: 'users/registrations#create'
     get 'users/sign_up/completion', to: 'users/registrations#completion'
     get 'users/login', to: 'users/sessions#new'
     post 'users/login', to: 'users/sessions#create'

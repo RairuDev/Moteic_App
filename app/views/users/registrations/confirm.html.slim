@@ -1,14 +1,14 @@
 h2.page-theme sign_up
-= form_with model: @user, url: users_sign_up_create_path(@user), local: true do |f|
+= form_with model: @user, url: users_sign_up_path(@user), local: true do |f|
   ul
-    li.list-item 名前：#{@user.name}
-    li.list-item メールアドレス：#{@user.email}
-    li.list-item 性別：#{@user.gender}
-    li.list-item 年齢：#{@user.age}
-    li.list-item 体型：#{@user.body_shape}
-    li.list-item 職業：#{@user.job}
-    li.list-item 年収：#{@user.income}
-    li.list-item 住まい：#{@user.prefecture_id}
+    li.user_info_list_items 名前：#{session[:name]}
+    li.user_info_list_items メールアドレス：#{session[:email]}
+    li.user_info_list_items 性別：#{(@user.gender_i18n)}
+    li.user_info_list_items 年齢：#{session[:age]}
+    li.user_info_list_items 体型：#{session[:body_shape]}
+    li.user_info_list_items 職業：#{@user.job_i18n}
+    li.user_info_list_items 年収：#{session[:income]}
+    li.user_info_list_items 住まい：#{@user.prefecture.name}
   .actions
     = f.submit "戻る", name: :back, class: 'back-btn'
     = f.submit ('決定'), class: 'green-btn'
