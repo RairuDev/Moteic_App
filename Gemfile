@@ -27,6 +27,9 @@ gem 'html2slim'
 gem 'active_hash'
 #擬似モデルを作るgem
 
+gem 'enum_help'
+#enumを日本語化
+
 gem 'devise'
 
 gem 'devise-i18n'

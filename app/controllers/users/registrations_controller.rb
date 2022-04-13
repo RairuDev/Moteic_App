@@ -31,9 +31,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:job] = sign_up_params[:job]
     session[:income] = sign_up_params[:income]
     session[:prefecture_id] = sign_up_params[:prefecture_id]
-    @user = User.new(sign_up_params)
+    @user = User.new(
+      email: session[:email],
+      password: session[:password],
+      name: session[:name],
+      gender: session[:gender],
+      body_shape: session[:body_shape],
+      age: session[:age],
+      income: session[:income],
+      job: session[:job],
+      prefecture_id: session[:prefecture_id]
+    )
     # render :step3 if @user.invalid?
     render :step2 and return if params[:back]
+    # binding.pry
   end
   # POST /resource
   def create

@@ -15,7 +15,7 @@ h2.page-theme sign_up
   = f.label :job, 'その他', value: :'others'
 
   = f.label :income, '収入', class: 'form_label'
-  = f.select :income, options_for_select([['~300'], ['300~500'], ['500~700'], ['700~1000'], ['1000~2000'], ['2000~']], session[:income]), {include_blank: '選択してください'}, class: 'short_form_field', required: true
+  = f.select :income, options_for_select([['~300万'], ['300~500万'], ['500~700万'], ['700~1000万'], ['1000~2000万'], ['2000万~']], session[:income]), {include_blank: '選択してください'}, class: 'short_form_field', required: true
 
   = f.label :prefecture_id, '地域', class: 'form_label'
   = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください', selected: session[:prefecture_id]}, class: 'short_form_field', required: true

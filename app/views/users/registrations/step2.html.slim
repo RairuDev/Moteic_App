@@ -16,7 +16,7 @@ h2.page-theme sign_up
   = f.select :body_shape, options_for_select([['細め'], ['やや細め'], ['普通'], ['ぽっちゃり'], ['筋肉質']], session[:body_shape]), {include_blank: '選択してください'}, class: 'short_form_field', required: true
 
   = f.label :age, '年齢', class: 'form_label'
-  = f.select :age, options_for_select([['18~24'], ['25~29'], ['30~34'], ['35~39'], ['40~']], session[:age]), {include_blank: '選択してください'}, class: 'short_form_field', required: true
+  = f.select :age, options_for_select([['18~24歳'], ['25~29歳'], ['30~34歳'], ['35~39歳'], ['40歳~']], session[:age]), {include_blank: '選択してください'}, class: 'short_form_field', required: true
   .actions
     = f.submit "戻る", name: :back,class: 'back-btn'
     = f.submit ('次へ'), class: 'green-btn'
