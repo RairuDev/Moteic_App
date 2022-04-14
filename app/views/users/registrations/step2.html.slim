@@ -6,10 +6,10 @@ h2.page-theme sign_up
   br
   = f.text_field :name, value: session[:name], autofocus: true, autocomplete: "additional-name", class: 'short_form_field', required: 'required', maxlength:6
   p.form_label 性別
-  = f.radio_button :gender, :man, checked: @user.gender == params[:gender], class: 'radio_button'
+  = f.radio_button :gender, :man, checked: 'man' == session[:gender], class: 'radio_button'
   = f.label :gender, '男性', value: :'man'
 
-  = f.radio_button :gender, :woman, checked: @user.gender == params[:gender], class: 'radio_button'
+  = f.radio_button :gender, :woman, checked: 'woman' == session[:gender], class: 'radio_button'
   = f.label :gender, '女性', value: :'woman'
 
   = f.label :body_shape, '体型', class: 'form_label'

@@ -10,7 +10,7 @@ $color-bubble: linear-gradient(to bottom, rgba(198, 168, 237, 0.237) 0%, rgba(58
   left: $left;
   z-index: 0;
 }
-@mixin btn($btn-color, $color){
+@mixin btn($btn-color, $color, $margin: 30px){
   border: 1px solid $btn-color;
   border-radius: 20px;
   background-color: $btn-color;
@@ -19,29 +19,34 @@ $color-bubble: linear-gradient(to bottom, rgba(198, 168, 237, 0.237) 0%, rgba(58
   color: $color;
   display: block;
   text-decoration: none;
+  margin: $margin;
 }
 body{
   overflow: hidden;
   position:relative;
 }
 .login-btn{
-  @include btn(aqua, black);
+  @include btn(aqua, black, 0 auto);
+
 }
 .green-btn{
   @include btn(lime, black);
-  margin: 30px;
+}
+.green-btn-center{
+  @include btn(lime, black, 0 auto);
 }
 .back-btn{
   @include btn(red, black);
-  margin: 30px;
 }
 .actions{
   display: flex;
   justify-content: center;
   margin: 50px;
 }
+
+//ページの大枠を囲む
 .page-container{
-  text-align: center;//ページの大枠を囲む
+  text-align: center;
 }
 .page-pink-wrap{
   background-color: $color-pink;
@@ -53,10 +58,12 @@ body{
   min-width: 500px;
 }
 
+//小さいシャボン玉
 .small-color-bubble{
   @include color-bubble;
-}//小さいシャボン玉
+}
 
+//大きいシャボン玉
 .big-color-bubble{
   @include color-bubble(480px, -200px, 1000px);
-}//大きいシャボン玉
+}
